@@ -1,23 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
+import Button from './component/button';
+import { useState } from 'react';
 
 function App() {
+  const [val ,setVal] = useState(100)
+
+  const addValue = () =>{
+    let val2 = val+100;
+setVal(val2)
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+        <p>{val}</p>
+        <h1>Dilshan</h1>
+        <Button  click ={addValue}/>
+      </div>
     </div>
   );
 }
